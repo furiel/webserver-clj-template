@@ -1,4 +1,5 @@
-(ns webserver.main)
+(ns webserver.main
+  (:gen-class))
 
 (defn -main []
   (println "hello world")
