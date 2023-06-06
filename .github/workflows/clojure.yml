@@ -1,0 +1,32 @@
+name: Clojure CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    container:
+      image: clojure:temurin-20-jammy
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: run tests
+        run: bin/kaocha
+
+  clj-kondo:
+    runs-on: ubuntu-latest
+    container:
+      image: cljkondo/clj-kondo:2023.05.26
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: lint
+        run: clj-kondo --lint src --lint test
