@@ -1,4 +1,6 @@
 # webserver-clj-template
+![tests](https://github.com/furiel/webserver-clj-template/actions/workflows/clojure.yml/badge.svg)
+
 template for a clojure prject with webserver
 
 ## Dependencise
