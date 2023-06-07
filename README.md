@@ -16,11 +16,19 @@ The following features are added to the template
 * kaocha
 * aot
 * uberjar
+* github actions
+* clj-kondo
 
 ## Run tests
 
 ```
 bin/kaocha
+```
+
+## Lint
+
+```
+just lint
 ```
 
 ## aot

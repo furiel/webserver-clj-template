@@ -22,11 +22,17 @@ jobs:
   clj-kondo:
     runs-on: ubuntu-latest
     container:
-      image: cljkondo/clj-kondo:2023.05.26
+      image: clojure:temurin-20-jammy
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: install wget
+        run: apt update && apt install -y wget
+
+      - name: install just
+        run: bash -c "wget -O- https://github.com/casey/just/releases/download/1.14.0/just-1.14.0-x86_64-unknown-linux-musl.tar.gz | tar xvz -C /usr/local/bin just"
+
       - name: lint
-        run: clj-kondo --lint src --lint test
+        run: just lint
