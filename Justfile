@@ -7,3 +7,6 @@ aot:
 
 uberjar: aot
     clojure -M:uberjar --main-class webserver.main
+
+lint:
+    clj -M:clj-kondo --lint src --lint test
