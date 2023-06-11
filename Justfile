@@ -11,5 +11,8 @@ uberjar: aot
 lint:
     clj -M:clj-kondo --lint src --lint test
 
+run:
+    clj -M -m webserver.main
+
 test *kaocha_opts:
     bin/kaocha {{kaocha_opts}}

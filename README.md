@@ -37,6 +37,12 @@ just lint
 just aot
 ```
 
+## run
+
+```
+just run
+```
+
 ## Uberjar
 
 ### Creating
