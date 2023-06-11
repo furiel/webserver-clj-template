@@ -31,5 +31,5 @@
 
 (deftest ping-pong
   (testing "ping-pong"
-    (is (= "PONG" (-> (client/get (str "http://localhost:" *port*))
+    (is (= "pong" (-> (client/get (str "http://localhost" ":" *port* "/ping"))
                       :body)))))
