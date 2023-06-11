@@ -4,4 +4,4 @@
    [clojure.test :refer :all]))
 
 (deftest main
-  (is (= :done (sut/-main))))
+  (is (= :done (sut/-main "config.edn"))))

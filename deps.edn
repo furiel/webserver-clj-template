@@ -1,10 +1,12 @@
 {:paths ["src" "classes"]
- :deps {org.clojure/clojure {:mvn/version "1.11.1"}}
+ :deps {org.clojure/clojure {:mvn/version "1.11.1"}
+        integrant/integrant {:mvn/version "0.8.1"}}
  :aliases {:aot {:extra-paths ["classes"]}
            :clj-kondo {:replace-deps {clj-kondo/clj-kondo {:mvn/version "2023.05.26"}}
                        :main-opts ["-m" "clj-kondo.main"]}
            :uberjar {:replace-deps {uberdeps/uberdeps {:mvn/version "1.3.0"}}
                      :replace-paths ["classes"]
                      :main-opts ["-m" "uberdeps.uberjar"]}
-           :test {:extra-paths ["test"]
-                  :extra-deps {lambdaisland/kaocha {:mvn/version "1.84.1335"}}}}}
+           :test {:extra-paths ["dev" "test"]
+                  :extra-deps {integrant/repl {:mvn/version "0.3.2"}
+                               lambdaisland/kaocha {:mvn/version "1.84.1335"}}}}}
