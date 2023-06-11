@@ -10,3 +10,6 @@ uberjar: aot
 
 lint:
     clj -M:clj-kondo --lint src --lint test
+
+test *kaocha_opts:
+    bin/kaocha {{kaocha_opts}}

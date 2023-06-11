@@ -22,7 +22,7 @@ The following features are added to the template
 ## Run tests
 
 ```
-bin/kaocha
+just test
 ```
 
 ## Lint
