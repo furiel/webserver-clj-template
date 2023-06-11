@@ -1,1 +1,3 @@
-{:webserver.main/main {}}
+{:webserver.http-server/jetty
+ {:port 8080
+  :join? false}}
