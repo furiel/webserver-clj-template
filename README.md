@@ -14,6 +14,7 @@ https://github.com/casey/just
 The following features are added to the template
 
 * ring
+* reitit
 * kaocha (unit tests and integration tests)
 * aot
 * uberjar

@@ -1,9 +1,13 @@
 (ns webserver.handlers-test
   (:require
-   [webserver.handlers :as sut]
-   [clojure.test :refer :all]))
+   [clojure.test :refer :all]
+   [ring.mock.request :as mock]
+   [webserver.handlers :as sut]))
 
 (deftest app
   (testing "app"
-    (is (= "PONG" (-> (sut/app {})
-                      :body)))))
+    (are [endpoint body]
+        (is (= body (-> (sut/app (mock/request :get endpoint))
+                        :body)))
+      "/ping" "pong"
+      "/not-exist" "404 not found")))

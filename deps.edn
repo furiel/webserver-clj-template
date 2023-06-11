@@ -3,6 +3,7 @@
         com.fzakaria/slf4j-timbre {:mvn/version "0.3.21"}
         com.taoensso/timbre {:mvn/version "6.1.0"}
         integrant/integrant {:mvn/version "0.8.1"}
+        metosin/reitit {:mvn/version "0.7.0-alpha4"}
         ring/ring-core {:mvn/version "1.10.0"}
         ring/ring-jetty-adapter {:mvn/version "1.10.0"}}
  :aliases {:aot {:extra-paths ["classes"]}
@@ -14,4 +15,5 @@
            :test {:extra-paths ["dev" "test"]
                   :extra-deps {clj-http/clj-http {:mvn/version "3.12.3"}
                                integrant/repl {:mvn/version "0.3.2"}
-                               lambdaisland/kaocha {:mvn/version "1.84.1335"}}}}}
+                               lambdaisland/kaocha {:mvn/version "1.84.1335"}
+                               ring/ring-mock {:mvn/version "0.4.0"}}}}}
