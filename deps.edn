@@ -12,5 +12,6 @@
                      :replace-paths ["classes"]
                      :main-opts ["-m" "uberdeps.uberjar"]}
            :test {:extra-paths ["dev" "test"]
-                  :extra-deps {integrant/repl {:mvn/version "0.3.2"}
+                  :extra-deps {clj-http/clj-http {:mvn/version "3.12.3"}
+                               integrant/repl {:mvn/version "0.3.2"}
                                lambdaisland/kaocha {:mvn/version "1.84.1335"}}}}}
