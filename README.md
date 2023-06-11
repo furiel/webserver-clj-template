@@ -22,7 +22,7 @@ The following features are added to the template
 ## Run tests
 
 ```
-bin/kaocha
+just test
 ```
 
 ## Lint
@@ -35,6 +35,12 @@ just lint
 
 ```
 just aot
+```
+
+## run
+
+```
+just run
 ```
 
 ## Uberjar

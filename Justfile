@@ -10,3 +10,9 @@ uberjar: aot
 
 lint:
     clj -M:clj-kondo --lint src --lint test
+
+run config="config.edn":
+    clj -M -m webserver.main {{config}}
+
+test *kaocha_opts:
+    bin/kaocha {{kaocha_opts}}
