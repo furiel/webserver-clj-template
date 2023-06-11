@@ -7,3 +7,7 @@
 (defn start-config [ig-config]
   (ig/load-namespaces ig-config)
   (ig/init ig-config))
+
+(defn stop-config [state]
+  (some-> state
+          ig/halt!))

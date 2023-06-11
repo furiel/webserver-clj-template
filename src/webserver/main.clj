@@ -8,8 +8,12 @@
   (println "Hello world!"))
 
 (defn -main [config]
-  (->
-   config
-   config/read-config
-   config/start-config)
-  :done)
+  (let [state (->
+               config
+               config/read-config
+               config/start-config)]
+    (.addShutdownHook (Runtime/getRuntime)
+                      (Thread.
+                       (fn []
+                         (config/stop-config state))))
+    :done))
