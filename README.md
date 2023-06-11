@@ -1,7 +1,7 @@
 # webserver-clj-template
 ![tests](https://github.com/furiel/webserver-clj-template/actions/workflows/clojure.yml/badge.svg)
 
-template for a clojure prject with webserver
+template for a clojure project with webserver
 
 ## Dependencise
 
@@ -13,7 +13,8 @@ https://github.com/casey/just
 
 The following features are added to the template
 
-* kaocha
+* ring
+* kaocha (unit tests and integration tests)
 * aot
 * uberjar
 * github actions
