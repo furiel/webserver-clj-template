@@ -13,7 +13,8 @@ https://github.com/casey/just
 
 The following features are added to the template
 
-* kaocha
+* ring
+* kaocha (unit tests and integration tests)
 * aot
 * uberjar
 * github actions
