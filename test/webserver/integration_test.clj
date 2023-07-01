@@ -1,6 +1,9 @@
 (ns webserver.integration-test
   (:require
    [clj-http.client :as client]
+   [clj-time.core :as t]
+   [clj-time.format :as f]
+   [clojure.string :as string]
    [clojure.test :refer :all]
    [integrant.core :as ig]
    [webserver.config :as config]))
@@ -33,3 +36,15 @@
   (testing "ping-pong"
     (is (= "pong" (-> (client/get (str "http://localhost" ":" *port* "/ping"))
                       :body)))))
+
+(deftest current-time
+  (let [date-hour-prefix
+        (f/unparse
+         (f/formatter :date-hour)
+         (t/from-time-zone (t/now) (t/time-zone-for-id "Europe/Budapest")))
+
+        current-time (-> (client/get (str "http://localhost" ":" *port*
+                                          "/api/current-time?TZ=Europe/Budapest"))
+                         :body)]
+    (is (string/starts-with?
+         current-time date-hour-prefix))))

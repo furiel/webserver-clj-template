@@ -15,6 +15,7 @@ The following features are added to the template
 
 * ring
 * reitit
+* interceptors
 * kaocha (unit tests and integration tests)
 * aot
 * uberjar
