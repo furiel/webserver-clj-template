@@ -1,3 +1,4 @@
-{:linters {:refer-all {:exclude [clojure.test]}
+{:linters {:refer-all {:exclude [clojure.test org.senatehouse.expect-call]}
+           :unresolved-symbol {:level :off}
            :unsorted-required-namespaces {:level :error}
            :namespace-name-mismatch {:level :error}}}
